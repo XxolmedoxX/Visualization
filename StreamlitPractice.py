@@ -37,8 +37,8 @@ with tab1:
     fig4 = px.line(filtered_df.groupby("listing_type")["price"].mean().reset_index(), x="listing_type", y="price", markers=True, title="Average Price by Listing Type")
     st.plotly_chart(fig4)
     
-    # Additional Graph: Density Plot for Price
-    fig5 = px.density_contour(filtered_df, x="price", y="minimum_nights", title="Density Plot: Price vs Minimum Nights", color_continuous_scale="viridis")
+    # Fixed Density Contour Plot
+    fig5 = px.density_contour(filtered_df, x="price", y="minimum_nights", title="Density Plot: Price vs Minimum Nights", contours_coloring="fill")
     st.plotly_chart(fig5)
 
 with tab2:
